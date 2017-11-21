@@ -27,16 +27,30 @@
 				<span class="span"></span>
 				<span class="span"></span>
 				<span class="span"></span>
-				<span class="span"></span>
-				<span class="span"></span>
-				<span class="span"></span>
-				<span class="span"></span>
-				<span class="span"></span>
-				<span class="span"></span>
-				<span class="span"></span>
-				<span class="span"></span>
-				<span class="span"></span>
-				<span class="span"></span>
+				<div class="container">
+					<span class="span"></span>
+					<span class="span"></span>
+					<span class="span"></span>
+					<span class="span"></span>
+					<span class="span"></span>
+					<span class="span"></span>
+					<span class="span"></span>
+					<span class="span"></span>
+					<span class="span"></span>
+					<span class="span"></span>
+				</div>
+		</div>
+		<div class="box">
+			<span class="span"></span>
+			<span class="span"></span>
+			<span class="span"></span>
+			<span class="span"></span>
+			<span class="span"></span>
+			<span class="span"></span>
+			<span class="span"></span>
+			<span class="span"></span>
+			<span class="span"></span>
+			<span class="span"></span>
 		</div>
 		
 		<script
@@ -56,10 +70,10 @@
 			}
 			var iterations = 1000000;
 			function bench_queries(iterations) {
-				bench("Doc class.class", iterations, function() { doc.class("container").class("span"); });
-				bench("Doc query", iterations, function() { doc.query(".container .span"); });
-				bench("jQ find", iterations, function() { $(".container").find(".span"); });
-				bench("jQ query", iterations, function() { $(".container .span"); });
+				// bench("Doc class.class", iterations, function() { doc.class("container").class("span"); });
+				bench("Doc query", iterations, function() { doc.query(".container .span:nth-child(5)"); });
+				// bench("jQ find", iterations, function() { $(".container").find(".span"); });
+				bench("jQ query", iterations, function() { $(".container .span:nth-child(5)"); });
 			}
 			
 			bench_queries(iterations);
