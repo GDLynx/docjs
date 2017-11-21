@@ -68,7 +68,7 @@
 				}
 				console.log((performance.now() - now).toFixed(2) + "ms : " + id);
 			}
-			var iterations = 300000;
+			var iterations = 30000;
 			function bench_queries(iterations) {
 				bench("Doc class.class", iterations, function() { doc.class("container").findClass("span"); });
 				bench("Doc class.query", iterations, function() { doc.class("container").find(".span"); });

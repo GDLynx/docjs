@@ -1,5 +1,5 @@
 function Element(_elem) {
-	this.elem = elem;
+	this.elem = _elem;
 }
 
 Element.prototype.addClass = function(_class) {

@@ -32,6 +32,6 @@ ElementList.prototype.each = function(_cb) {
 	var index = 0;
 
 	for(; index < this.list.length; index++) {
-		_cb(index, new doc.element(this.list[index]));
+		_cb(index, new Element(this.list[index]));
 	}
 }

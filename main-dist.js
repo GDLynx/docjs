@@ -17,7 +17,7 @@ doc.query = function (_query) {
 	return new ElementList(document.querySelectorAll(_query));
 };
 function Element(_elem) {
-	this.elem = elem;
+	this.elem = _elem;
 }
 
 Element.prototype.addClass = function (_class) {
@@ -66,6 +66,6 @@ ElementList.prototype.each = function (_cb) {
 	var index = 0;
 
 	for (; index < this.list.length; index++) {
-		_cb(index, new doc.element(this.list[index]));
+		_cb(index, new Element(this.list[index]));
 	}
 };
