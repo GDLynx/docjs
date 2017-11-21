@@ -44,7 +44,7 @@
 			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 			  crossorigin="anonymous"></script>
 			  
-		<script src="main.js">
+		<script src="../main.js">
 		</script>
 		<script type="text/javascript">
 			function bench(id, iterations, b) {
