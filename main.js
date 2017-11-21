@@ -16,10 +16,7 @@ doc.element_list = function(_list) {
 
     this.each = function(_cb) {
         var index = 0;
-        // Array.prototype.forEach.call(_list, function(elem) {
-        //     _cb(index, new doc.element(elem));
-        //     index++;
-        // })
+
 		for(; index < _list.length; index++) {
 			_cb(index, new doc.element(_list[index]));
 		}
