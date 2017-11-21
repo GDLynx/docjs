@@ -14,8 +14,8 @@
 				margin-bottom: 2px;
 				
 			}
-			span.foo {
-				width: 64px;
+			
+			.container span {
 				background: blue;
 			}
 		</style>
@@ -58,7 +58,7 @@
 			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 			  crossorigin="anonymous"></script>
 			  
-		<script src="../main.js">
+		<script src="../main-dist.js">
 		</script>
 		<script type="text/javascript">
 			function bench(id, iterations, b) {
@@ -68,12 +68,17 @@
 				}
 				console.log((performance.now() - now).toFixed(2) + "ms : " + id);
 			}
-			var iterations = 1000000;
+			var iterations = 300000;
 			function bench_queries(iterations) {
-				// bench("Doc class.class", iterations, function() { doc.class("container").class("span"); });
-				bench("Doc query", iterations, function() { doc.query(".container .span:nth-child(5)"); });
-				// bench("jQ find", iterations, function() { $(".container").find(".span"); });
-				bench("jQ query", iterations, function() { $(".container .span:nth-child(5)"); });
+				bench("Doc class.class", iterations, function() { doc.class("container").findClass("span"); });
+				bench("Doc class.query", iterations, function() { doc.class("container").find(".span"); });
+				bench("Doc query.query", iterations, function() { doc.query(".container").find(".span"); });
+				bench("Doc query", iterations, function() { doc.query(".container .span"); });
+				bench("jQ query", iterations, function() { $(".container .span"); });
+				
+				bench("Doc class", iterations, function() { doc.class("span"); });
+				bench("Doc query", iterations, function() { doc.query(".span"); });
+				bench("jq simple query", iterations, function() { $(".span"); });
 			}
 			
 			bench_queries(iterations);
